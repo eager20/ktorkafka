@@ -1,0 +1,89 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+group 'com.eager20'
+version '0.0.1'
+
+mainClassName = "io.ktor.server.netty.EngineMain"
+
+sourceSets {
+    main.kotlin.srcDirs = main.java.srcDirs = ['src']
+    test.kotlin.srcDirs = test.java.srcDirs = ['test']
+    main.resources.srcDirs = ['resources']
+    test.resources.srcDirs = ['testresources']
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+    maven { url 'https://kotlin.bintray.com/ktor' }
+}
+
+
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.20"
+    //implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "io.ktor:ktor-server-netty:$ktor_version"
+    implementation "ch.qos.logback:logback-classic:$logback_version"
+    implementation "io.ktor:ktor-server-core:$ktor_version"
+    implementation "io.ktor:ktor-auth:$ktor_version"
+    implementation "io.ktor:ktor-auth-jwt:$ktor_version"
+    implementation "io.ktor:ktor-jackson:$ktor_version"
+    implementation "io.ktor:ktor-client-core:$ktor_version"
+    implementation "io.ktor:ktor-client-core-jvm:$ktor_version"
+    implementation "io.ktor:ktor-client-jetty:$ktor_version"
+    testImplementation "io.ktor:ktor-server-tests:$ktor_version"
+
+
+    // Koin Core features
+    implementation "io.insert-koin:koin-core:$koin_version"
+// Koin Test features
+    testImplementation "io.insert-koin:koin-test:$koin_version"
+
+// Koin for JUnit 4
+    testImplementation "io.insert-koin:koin-test-junit4:$koin_version"
+// Koin for JUnit 5
+    testImplementation "io.insert-koin:koin-test-junit5:$koin_version"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:4.1.0"
+//
+    // Koin for Ktor
+    implementation "io.insert-koin:koin-ktor:$koin_ktor"
+    // SLF4J Logger
+    implementation "io.insert-koin:koin-logger-slf4j:$koin_ktor"
+
+
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.9.6")
+    implementation("org.apache.kafka:kafka-clients:2.6.0")
+
+
+    implementation("org.jetbrains.exposed:exposed-core:$exposed_version")
+    implementation("org.jetbrains.exposed:exposed-dao:$exposed_version")
+    implementation("org.jetbrains.exposed:exposed-jdbc:$exposed_version")
+    implementation("com.h2database:h2:$h2_version")
+
+    implementation("com.zaxxer:HikariCP:$hikaricp_version")
+    implementation("org.ehcache:ehcache:$ehcache_version")
+
+    implementation("mysql:mysql-connector-java:8.0.31")
+
+}
