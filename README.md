@@ -1,4 +1,4 @@
-#Ktor 기반 Kafka Client, Exposed, MapStruct with Configuration 설정. 
+# Ktor 기반 Kafka Client, Exposed, MapStruct with Configuration 설정. 
 - https://github.com/eager20/ktorkafka
 > 처음엔 Ktor를 기반으로 Koin 이용해서 카프카 클라이언트 DI 해서만 쓸라고 했는데.... 일이 커졌다.
 > 
@@ -20,12 +20,12 @@
   - Koin Version : https://github.com/InsertKoinIO/koin/blob/main/CHANGELOG.md
   - Koin 셈플 Git : <https://github.com/crisunx/ktor-koin-sample-app>
   - Koin 셈플1 : https://kotlinworld.com/120
-- Kakfa Client
+- Kakfa Client 2.6.0
   - 셈플페이지1 : https://docs.confluent.io/platform/current/tutorials/examples/clients/docs/kotlin.html#produce-records
   - 셈플페이지2 :https://medium.com/swlh/async-messaging-with-kotlin-and-kafka-488e399e4e17
 - exposed 0.36.2 (Kotlin ORM)
   - exposed 공식페이지 : https://github.com/JetBrains/Exposed/wiki
-- MapStruct For Kotlin 1.5.1
+- MapStruct 1.5.1
   - MapStruct 공식 가이드 : https://github.com/mapstruct/mapstruct-examples/tree/main/mapstruct-kotlin
   
 ## 구성하면서 솔루션내 팁?
