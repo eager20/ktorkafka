@@ -7,7 +7,7 @@
 > 노드도 이렇게 간단하고, 할거 다할거면 정말 노드 쓰는게 좋은거 아닌가? 라는 생각?
 
 ## Injection Tech
-- Kotlin 1.6.21
+- Kotlin 1.6.21 ( JVM 17 Using )
   - 필요성?1 : https://gun0912.tistory.com/81
   - ScopeFunc : https://github.com/CodingBakery/KotlinStudy/issues/7
   - 1급객체 : https://medium.com/@lazysoul/functional-programming-%EC%97%90%EC%84%9C-1%EA%B8%89-%EA%B0%9D%EC%B2%B4%EB%9E%80-ba1aeb048059
