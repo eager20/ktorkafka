@@ -9,10 +9,7 @@ import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.kafka.common.serialization.StringSerializer
 import java.util.*
 
-
 class RawDataKafkaClient (private val config: Configuration)   {
-
-
     fun createProducer(): Producer<String, String> {
         val props = Properties()
         props["bootstrap.servers"] = config.appConf("kafka.hostname")
@@ -27,12 +24,11 @@ class RawDataKafkaClient (private val config: Configuration)   {
         val props = Properties()
         props["bootstrap.servers"] = config.appConf("kafka.hostname")
             .plus(":")
-            .plus(config.appConf("kafka.port"))
-        props["group.id"] = "test03"
-        props["auto.offset.reset"] = "earliest"
+            .plus(config.appConf("kafka.groupId"))
+        props["group.id"] = config.appConf("kafka.auto_offset_reset")
+        props["auto.offset.reset"] = config.appConf("kafka.hostname")
         props["key.deserializer"] = StringDeserializer::class.java
         props["value.deserializer"] = StringDeserializer::class.java
         return KafkaConsumer(props)
     }
-
 }

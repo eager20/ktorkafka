@@ -6,6 +6,5 @@ import rawdata.router.rawDataRoute
 fun Routing.apiRoute() {
     route("/api/v1") {
         rawDataRoute()
-
     }
 }

@@ -1,12 +1,15 @@
 package com.eager20.rawdata.service
 
-interface RawDataService{
-    fun addWord(src:String) :String
-}
+// 인터페이스를 만들어도 되긴하는데..
+// 클래스만 만드는 방식도됨....
+//interface RawDataService{
+//    fun addWord(src:String) :String
+//}
 
-class RawDataServiceImpl :RawDataService  {
+//class RawDataServiceImpl :RawDataService  {
+class RawDataService  {
 
-    override fun addWord(src:String) :String{
+    fun addWord(src:String) :String{
         return src+" TEST"
     }
 
