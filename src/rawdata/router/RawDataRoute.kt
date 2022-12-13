@@ -1,8 +1,6 @@
 package rawdata.router
 
 import com.eager20.rawdata.kafka.RawDataKafkaClient
-import com.eager20.rawdata.mapper.UserConverter
-import com.eager20.rawdata.model.Member
 import com.eager20.rawdata.repository.UserRepository
 import com.eager20.rawdata.service.RawDataService
 import com.typesafe.config.ConfigFactory
@@ -13,7 +11,6 @@ import io.ktor.response.*
 import io.ktor.routing.*
 import org.apache.kafka.clients.producer.ProducerRecord
 import org.koin.ktor.ext.inject
-import org.mapstruct.factory.Mappers
 import java.time.Duration
 
 fun Route.rawDataRoute(){
@@ -36,15 +33,14 @@ private fun Route.recvGetData(){
 
     get("/kafkacall") {
         val producer1 = kafkaClient.createProducer()
-        val future = producer1.send(ProducerRecord("TP001", "1","TEST"))
-        future.get()
+        producer1.send(ProducerRecord("TP001", "1","TEST"))
         call.respondText("RAW CALL" , contentType = ContentType.Text.Plain)
     }
 
     get("/getkafka") {
         val consummer1 = kafkaClient.createConsumer()
         consummer1.subscribe(listOf("TP001"))
-        var record1 = consummer1.poll(Duration.ofSeconds(1))
+        val record1 = consummer1.poll(Duration.ofSeconds(1))
         println("Consumed ${record1.count()} records")
 
         // auto_offset_reset 옵션을 earliest (첨부터 읽기를 했기 때문에 가능)

@@ -1,10 +1,8 @@
 package com.eager20
 
 import com.eager20.di.appModule
-import com.eager20.rawdata.service.RawDataService
 import io.ktor.application.*
 import io.ktor.response.*
-import io.ktor.request.*
 import io.ktor.features.*
 import io.ktor.routing.*
 import io.ktor.http.*

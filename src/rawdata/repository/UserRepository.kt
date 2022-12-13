@@ -2,7 +2,6 @@ package com.eager20.rawdata.repository
 
 import com.eager20.rawdata.mapper.UserConverter
 import com.eager20.rawdata.model.Member
-import com.eager20.rawdata.model.Member.name
 import com.eager20.rawdata.model.MemberDTO
 import com.eager20.rawdata.model.MemberEntity
 import org.jetbrains.exposed.dao.id.EntityID
