@@ -24,8 +24,8 @@ class RawDataKafkaClient (private val config: Configuration)   {
         val props = Properties()
         props["bootstrap.servers"] = config.appConf("kafka.hostname")
             .plus(":")
-            .plus(config.appConf("kafka.groupId"))
-        props["group.id"] = config.appConf("kafka.auto_offset_reset")
+            .plus(config.appConf("kafka.port"))
+        props["group.id"] = config.appConf("kafka.autoOffsetReset")
         props["auto.offset.reset"] = config.appConf("kafka.hostname")
         props["key.deserializer"] = StringDeserializer::class.java
         props["value.deserializer"] = StringDeserializer::class.java
