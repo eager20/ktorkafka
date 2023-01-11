@@ -77,13 +77,13 @@ bin/kafka-server-start.sh -daemon config/server.properties
 - 카프카에 토픽생성해야함. 예전처럼 주키퍼에 만들면 안됩~!!!!!!
 - 예전 처럼 주키퍼에 만들었다가 으....
 ~~~
-bin/kafka-topics.sh --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --create --topic scpjTopic
+bin/kafka-topics.sh --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --create --topic myTest
 ~~~
 
 ### 프로듀서, 컨슈머..
 ~~~
-bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic scpjTopic
-bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 -from-beginning --topic scpjTopic
+bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic myTest
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 -from-beginning --topic myTest
 ~~~
 
 ### 쓰봉.
