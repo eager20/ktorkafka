@@ -64,7 +64,7 @@ CREATE TABLE `member` (
 PRIMARY KEY (`mem_seq`),
 UNIQUE KEY `member_email_IDX` (`email`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
-```
+``````
 
 ## Kafka 로컬 설정 시 주의사항.
 ### 시작종료
